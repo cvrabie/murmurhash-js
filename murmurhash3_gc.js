@@ -20,7 +20,7 @@ function murmurhash3_32_gc(key, seed) {
   
   remainder = key.length & 3; // key.length % 4
   bytes = key.length - remainder;
-  h1 = seed || 0x01234567;
+  h1 = (typeof seed === 'undefined') ? 0x01234567 : seed;
   c1 = 0xcc9e2d51;
   c2 = 0x1b873593;
   i = 0;
